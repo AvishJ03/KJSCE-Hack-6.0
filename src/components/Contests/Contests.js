@@ -33,9 +33,9 @@ const Contests = () => {
       <div>
         {contest.map((c) => {
           return (
-            <Container>
-              <Link href={c.url}>{c.name}</Link>
-            </Container>
+            <div>
+              <a href={c.url}>{c.name}</a>
+            </div>
           );
         })}
       </div>
