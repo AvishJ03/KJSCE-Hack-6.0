@@ -20,7 +20,7 @@ const Contests = () => {
       .then((response) => response.json())
       .then((data) => {
         setContest(data);
-      })
+      }) 
       .catch((error) => console.error(error));
   };
 
@@ -33,9 +33,9 @@ const Contests = () => {
       <div>
         {contest.map((c) => {
           return (
-            <Container>
-              <Link href={c.url}>{c.name}</Link>
-            </Container>
+            <div>
+              <a href={c.url}>{c.name}</a>
+            </div>
           );
         })}
       </div>

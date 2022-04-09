@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Contests from "./components/Contests/Contests";
 import Login from "./components/Login/Login";
-import Quiz from "./components/Quiz/Quiz";
+import Quiz from "./components/quiz/Quiz";
 
 function App() {
   return (
