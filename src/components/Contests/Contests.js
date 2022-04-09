@@ -20,7 +20,7 @@ const Contests = () => {
       .then((response) => response.json())
       .then((data) => {
         setContest(data);
-      }) 
+      })
       .catch((error) => console.error(error));
   };
 
@@ -30,19 +30,50 @@ const Contests = () => {
 
   const GetContests = () => {
     return (
-      <div>
+      <>
         {contest.map((c) => {
           return (
-            <div>
-              <a href={c.url}>{c.name}</a>
-            </div>
-          );
+            <Tr>
+              <Td>
+                <Link href={c.url}>{c.name}</Link>;
+              </Td>
+              <Td>
+                {c.start_time}
+              </Td>
+              <Td>
+                {c.end_time}
+              </Td>
+              <Td>
+                {c.site}
+              </Td>
+              <Td>
+                {c.in_24_hours}
+              </Td>
+            </Tr>
+          )
         })}
-      </div>
+      </>
     );
   };
 
-  return <GetContests />;
+  return (
+    <TableContainer>
+    <Table size='sm' variant="striped" colorScheme='purple'>
+      <Thead>
+        <Tr>
+          <Th>Name</Th>
+          <Th>Start</Th>
+          <Th>End</Th>
+          <Th>Site</Th>
+          <Th>In 24 Hours</Th>
+        </Tr>
+      </Thead>    
+        <Tbody>
+          <GetContests />
+        </Tbody>
+      </Table>
+    </TableContainer>
+  );
 };
 
 export default Contests;
