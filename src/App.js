@@ -11,6 +11,7 @@ import Theory from "./components/theory/theory";
 import Visualisation from "./components/visualisation/visualisation.jsx";
 import { BrowserRouter, Route, NavLink, Link, Routes } from "react-router-dom";
 import { lazy } from "react";
+import Interview from "./components/Interview/Interview";
 
 const PageNotFound = () => <div>404</div>;
 const ExperimentList = lazy(() =>
@@ -43,10 +44,10 @@ function App() {
         path="/experiments/bblsort/visualisation"
         element={<Visualisation param="bblsort" />}
       />
-      {/*         <Route path='/contests' element={<Signup />} exact={true} />
-        <Route path='/interviews' element={<Signup />} exact={true} />
-        <Route path='/courses' element={<Signup />} exact={true} /> */}
-      {/* <Route path='/contests' element={<Contests />} exact={true} /> */}
+        {/* <Route path='/contests' element={<Signup />} exact={true} /> */}
+        <Route path='/interviews' element={<Interview />} exact={true} />
+        {/* <Route path='/courses' element={<Signup />} exact={true} /> */} 
+        {/* <Route path='/contests' element={<Contests />} exact={true} /> */}
     </Routes>
   );
 }
