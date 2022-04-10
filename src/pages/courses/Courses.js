@@ -13,7 +13,7 @@ const Courses = () => {
     <>
       <Header />
       <VStack m={50} p={50}>
-      <Heading m={20}>Sorting Algorithms</Heading>
+      <Heading m={20} size="lg">Sorting Algorithms</Heading>
         <Link href="/experiments/bblsort/theory">Bubble Sort</Link>
         <Link href="/experiments/selsort/theory">Selection Sort</Link>
         <Link href="/experiments/inssort/theory">Insertion Sort</Link>

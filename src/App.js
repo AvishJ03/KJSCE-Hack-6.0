@@ -13,6 +13,7 @@ import { useAuth } from "./contexts/AuthContext";
 import Visualisation from "./components/visualisation/visualisation.jsx";
 import { BrowserRouter, Route, NavLink, Link, Routes } from "react-router-dom";
 import Interview from "./components/Interview/Interview";
+import Chatbot from "./components/Chatbot/Chatbot";
 
 
 function App() {
@@ -65,7 +66,8 @@ function App() {
       />
         {/* <Route path='/contests' element={<Signup />} exact={true} /> */}
         <Route path='/interviews' element={<Interview />} exact={true} />
-        {/* <Route path='/courses' element={<Signup />} exact={true} /> */} 
+        <Route path='/temp' element={<Chatbot />} exact={true} />
+        {/* <Route path='/courses' element={<Chatbot />} exact={true} />  */}
         {/* <Route path='/contests' element={<Contests />} exact={true} /> */}
     </Routes>
   );

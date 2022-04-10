@@ -6,11 +6,15 @@ import banner_img from '../images/title-img.png'
 import news from '../images/news.png'
 import logo_concept from '../images/logo-no-bg.png'
 import gif from '../images/imageedit_2_4114114697.gif'
+import Chatbot from '../components/Chatbot/Chatbot'
 
 function Home() {
   return (
     <div>
       <Header />
+      <div className='chatbot'>
+        <Chatbot />
+      </div>
       <div className="wrapper">
 
         <section className="banner bg-1" id="home">
@@ -245,9 +249,6 @@ function Home() {
                   <form action="#">
                     <div className="input-group">
                       <input type="text" className="form-control" placeholder="Enter your email address" />
-                      <div className="input-group-append">
-                        <span className="input-group-text ti-arrow-right"></span>
-                      </div>
                     </div>
                   </form>
                 </div>

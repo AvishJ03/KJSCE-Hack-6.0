@@ -62,6 +62,7 @@ const Theory = ({ param }) => {
 
   return (
     <div className="theorycustom1">
+      <Header />
       {markdownText && (
         <ReactMarkdown
           className="theorycustom2"
@@ -69,6 +70,7 @@ const Theory = ({ param }) => {
           children={markdownText}
         />
       )}
+      <Footer />
     </div>
   );
 };

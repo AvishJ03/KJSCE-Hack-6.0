@@ -18,15 +18,9 @@ function Header() {
   function handleclickhome() {
     navigate("/home");
   }
-  /* function handleclickcourses(){
-        navigate('/courses')
-    } */
   function handleclickquizlets() {
     navigate("/quizlets");
   }
-  /* function handleclickinterviews(){
-        navigate('/interviews')
-    } */
   function handleclickprofile() {
     navigate("/profile");
   }
@@ -38,6 +32,12 @@ function Header() {
     {
       !currentUser && navigate("/login");
     }
+  }
+  function handleclickinterviews() {
+    navigate("/interviews");
+  }
+  function handleclickcourses() {
+    navigate("/courses");
   }
   return (
     <div>
@@ -64,15 +64,13 @@ function Header() {
                 <button className="nav-btn" onClick={handleclickhome}>
                   Home
                 </button>
-                <button className="nav-btn" /* onClick={handleclickcourses} */>
+                <button className="nav-btn" onClick={handleclickcourses}>
                   Courses
                 </button>
                 <button className="nav-btn" onClick={handleclickquizlets}>
                   Quizlets
                 </button>
-                <button
-                  className="nav-btn" /* onClick={handleclickinterviews} */
-                >
+                <button className="nav-btn" onClick={handleclickinterviews}>
                   Interviews
                 </button>
                 <button className="nav-btn" onClick={handleclickcontests}>

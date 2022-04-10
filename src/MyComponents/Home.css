@@ -2298,4 +2298,10 @@ a:hover {
   margin-left: 40px;
 }
 
+.chatbot {
+  position: sticky;
+  top: 80%;
+  z-index: 10;
+}
+
 /*# sourceMappingURL=maps/style.css.map */
