@@ -12,16 +12,8 @@ import Landing from "./MyComponents/Landing";
 import { useAuth } from "./contexts/AuthContext";
 import Visualisation from "./components/visualisation/visualisation.jsx";
 import { BrowserRouter, Route, NavLink, Link, Routes } from "react-router-dom";
-import { lazy } from "react";
 import Interview from "./components/Interview/Interview";
 
-const PageNotFound = () => <div>404</div>;
-const ExperimentList = lazy(() =>
-  import("./pages/experiment-list/experiment-list.jsx")
-);
-const IndividualExperiment = lazy(() =>
-  import("./pages/individual-experiment/individual-experiment.jsx")
-);
 
 function App() {
   const { currentUser } = useAuth();
@@ -41,12 +33,30 @@ function App() {
       <Route path="/courses" element={<Courses />} exact={true} />
       <Route path="/login" element={<Login />} exact={true} />
       <Route path="/signup" element={<Signup />} exact={true} />
-      <Route exact path="/list_of_experiments" element={<ExperimentList />} />
-      <Route exact path="/experiments" element={<ExperimentList />} />
       <Route
         exact
         path="/experiments/bblsort/theory"
         element={<Theory param="bblsort" />}
+      />
+      <Route
+        exact
+        path="/experiments/inssort/theory"
+        element={<Theory param="inssort" />}
+      />
+      <Route
+        exact
+        path="/experiments/mrgsort/theory"
+        element={<Theory param="mrgsort" />}
+      />
+      <Route
+        exact
+        path="/experiments/qcksort/theory"
+        element={<Theory param="qcksort" />}
+      />
+      <Route
+        exact
+        path="/experiments/selsort/theory"
+        element={<Theory param="selsort" />}
       />
       <Route
         exact

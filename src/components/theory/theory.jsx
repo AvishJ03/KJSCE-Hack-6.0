@@ -5,6 +5,8 @@ import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 /* Use `…/dist/cjs/…` if you’re not in ESM! */
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import Footer from "../../MyComponents/Footer";
+import Header from "../../MyComponents/Header";
 import "./theory.css";
 // import { useStylesTheory } from "./theory.styles";
 

@@ -8,5 +8,6 @@
 .visualcode2 {
   width: 1500px;
   height: 650px;
-  border: none;
+  border: 2px solid black;
+  margin-left: 10px;
 }

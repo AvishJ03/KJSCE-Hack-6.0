@@ -2,6 +2,8 @@ import React from "react";
 import "./Header.css";
 import avatar from "../images/pfp.png";
 import hori_logo from "../images/logo-text.png";
+
+import { useAuth } from "../contexts/AuthContext";
 import {
   BrowserRouter,
   Route,
@@ -11,6 +13,7 @@ import {
 } from "react-router-dom";
 
 function Header() {
+  const { currentUser, logout } = useAuth();
   const navigate = useNavigate();
   function handleclickhome() {
     navigate("/home");
@@ -30,8 +33,11 @@ function Header() {
   function handleclickcontests() {
     navigate("/contests");
   }
-  function handleclicklogin() {
-    navigate("/login");
+  function handleclicklogout() {
+    logout();
+    {
+      !currentUser && navigate("/login");
+    }
   }
   return (
     <div>
@@ -49,7 +55,12 @@ function Header() {
           <div className="header-left">
             <div className="input-group icons">
               <div className="input-group-prepend">
-                <input type="search" className="form-control" placeholder="Search" aria-label="Search Dashboard" />
+                <input
+                  type="search"
+                  className="form-control"
+                  placeholder="Search"
+                  aria-label="Search Dashboard"
+                />
                 <button className="nav-btn" onClick={handleclickhome}>
                   Home
                 </button>
@@ -59,15 +70,17 @@ function Header() {
                 <button className="nav-btn" onClick={handleclickquizlets}>
                   Quizlets
                 </button>
-                <button className="nav-btn" /* onClick={handleclickinterviews} */>
+                <button
+                  className="nav-btn" /* onClick={handleclickinterviews} */
+                >
                   Interviews
                 </button>
                 <button className="nav-btn" onClick={handleclickcontests}>
                   Contests
                 </button>
-                <button className="auth-btn" onClick={handleclicklogin}>
+                <button className="auth-btn" onClick={handleclicklogout}>
                   Log Out
-                </button> 
+                </button>
               </div>
             </div>
           </div>

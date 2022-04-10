@@ -1,14 +1,24 @@
-import React, { useState } from "react";
 import Header from "../../MyComponents/Header";
 import Footer from "../../MyComponents/Footer";
 import { useNavigate } from "react-router-dom";
 import "./Quiz.css";
+import { useAuth } from "../../contexts/AuthContext";
+import { db, auth } from "../../utils/init-firebase";
+
+import React, { useState, useEffect } from "react";
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  query,
+  updateDoc,
+  where,
+} from "firebase/firestore";
 
 const Quiz = () => {
   const navigate = useNavigate();
-  function handleHome() {
-    navigate("/quizlets");
-  }
+
   const questions = [
     {
       questionText:
@@ -81,13 +91,15 @@ const Quiz = () => {
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
-  const [score, setScore] = useState(0);
+  const [scoree, setScore] = useState(0);
+  var arr = [];
+  const { currentUser } = useAuth();
+  const uid = currentUser?.uid;
 
   const handleAnswerOptionClick = (isCorrect) => {
     if (isCorrect) {
-      setScore(score + 1);
+      setScore(scoree + 1);
     }
-
     const nextQuestion = currentQuestion + 1;
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
@@ -95,13 +107,54 @@ const Quiz = () => {
       setShowScore(true);
     }
   };
+  const AddScore = async () => {
+    const getUser = async () => {
+      try {
+        const userRef = collection(db, "users");
+        const q = query(userRef, where("user_id", "==", uid));
+        const querySnapshot = await getDocs(q);
+        const userID = querySnapshot.docs[0].id;
+        console.log(userID);
+        const userDoc = doc(db, "users", userID);
+        const docSnap = await getDoc(userDoc);
+        let temp = docSnap.data().score;
+        temp.push(scoree);
+        // console.log(temp);
+        arr = temp;
+        console.log(arr);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    const updateLevel = async () => {
+      try {
+        const userRef = collection(db, "users");
+        const q = query(userRef, where("user_id", "==", uid));
+        const querySnapshot = await getDocs(q);
+        const userID = querySnapshot.docs[0].id;
+        console.log(userID);
+        const userDoc = doc(db, "users", userID);
+        const newField = { score: arr };
+        console.log(newField);
+        await updateDoc(userDoc, newField);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    await getUser();
+    await updateLevel();
+  };
+  function handleHome() {
+    AddScore();
+    navigate("/quizlets");
+  }
   return (
     <div>
       <Header />
       <div className="quiz-app">
         {showScore ? (
           <div className="score-section">
-            You scored {score} out of {questions.length}
+            You scored {scoree} out of {questions.length}
             <button className="go-back" onClick={handleHome}>
               Go Back
             </button>
