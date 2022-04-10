@@ -70,7 +70,7 @@ const Chatbot = () => {
           <>
       
             <Button mt={3} ref={btnRef} onClick={onOpen}>
-              Trigger modal
+              HelpBot
             </Button>
       
             <Modal

@@ -6,11 +6,15 @@ import banner_img from '../images/title-img.png'
 import news from '../images/news.png'
 import logo_concept from '../images/logo-no-bg.png'
 import gif from '../images/imageedit_2_4114114697.gif'
+import Chatbot from '../components/Chatbot/Chatbot'
 
 function Home() {
   return (
     <div>
       <Header />
+      <div className='chatbot'>
+        <Chatbot />
+      </div>
       <div className="wrapper">
 
         <section className="banner bg-1" id="home">
