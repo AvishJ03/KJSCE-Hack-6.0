@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import "./Login.css";
 import { db, auth } from "../../utils/init-firebase";
 import { useAuth } from "../../contexts/AuthContext";
-import { BrowserRouter, Route, NavLink, Link, useNavigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Route,
+  NavLink,
+  Link,
+  useNavigate,
+} from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -25,53 +31,59 @@ export default function Login() {
     }
     setIsSubmiting(true);
     login(email, password);
-    navigate("/home");
+    {
+      currentUser && navigate("/home");
+    }
     console.log(currentUser);
   };
 
-  const navigate=useNavigate()
-  function handleclicksignup(){
-    navigate('/signup')
+  const navigate = useNavigate();
+  function handleclicksignup() {
+    navigate("/signup");
   }
 
   return (
     <div className="login-container">
       <div className="login-wrapper flex-full-center">
-      <div className="login-box flex-col-full-center">
-        <div className="login-text-wrapper">
-          <p className="login-text">Login</p>
-        </div>
-        <form action="submit">
-          <div className="flex-col-full-center">
-            <div className="login-input-wrapper">
-              <input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={handleEmail}
-                className="input"
-              />
-              <input
-                type="password"
-                placeholder="Password"
-                className="input"
-                value={password}
-                onChange={handlePassword}
-              />
-            </div>
-            <button value="Submit" className="submit-button" onClick={log}>
-              Submit
-            </button>
+        <div className="login-box flex-col-full-center">
+          <div className="login-text-wrapper">
+            <p className="login-text">Login</p>
           </div>
-        </form>
-        <div className="login-below slide-up">
-          <div className="center">
-            <p className="login-text">or <button className="auth-btn" onClick={handleclicksignup}>Sign Up</button></p>
+          <form action="submit">
+            <div className="flex-col-full-center">
+              <div className="login-input-wrapper">
+                <input
+                  type="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={handleEmail}
+                  className="input"
+                />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  className="input"
+                  value={password}
+                  onChange={handlePassword}
+                />
+              </div>
+              <button value="Submit" className="submit-button" onClick={log}>
+                Submit
+              </button>
+            </div>
+          </form>
+          <div className="login-below slide-up">
+            <div className="center">
+              <p className="login-text">
+                or{" "}
+                <button className="auth-btn" onClick={handleclicksignup}>
+                  Sign Up
+                </button>
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    </div>
-    
   );
 }
