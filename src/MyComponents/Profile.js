@@ -1,5 +1,6 @@
 import Header from './Header';
 import Footer from './Footer';
+import './Profile.css'
 import profile from "../images/pfp.png";
 
 import React from 'react'
@@ -71,10 +72,10 @@ function Profile() {
                                             <div class="tdl-holder">
                                                 <div class="tdl-content">
                                                     <ul id="todo_list">
-                                                        <li><label><input type="checkbox" /><span>Get up</span></label></li>
-                                                        <li><label><input type="checkbox" /><span>Stand up</span></label></li>
-                                                        <li><label><input type="checkbox" /><span>Don't give up the fight.</span></label></li>
-                                                        <li><label><input type="checkbox" /><span>Do something else</span></label></li>
+                                                        <li><label><input type="checkbox" /><span>Revise Insertion Sort</span></label></li>
+                                                        <li><label><input type="checkbox" /><span>Kruskal's Algorithm</span></label></li>
+                                                        <li><label><input type="checkbox" /><span>Classify Data Structures</span></label></li>
+                                                        <li><label><input type="checkbox" /><span>Implement DEQueue</span></label></li>
                                                     </ul>
                                                 </div>
                                                 <div class="px-4">

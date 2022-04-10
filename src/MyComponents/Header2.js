@@ -9,6 +9,8 @@ import {
   Link,
   useNavigate,
 } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBell } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {
   const navigate = useNavigate();
@@ -49,7 +51,28 @@ function Header() {
           <div className="header-left">
             <div className="input-group icons">
               <div className="input-group-prepend">
-                <input type="search" className="form-control" placeholder="Search" aria-label="Search Dashboard" />
+                <span
+                  className="input-group-text bg-transparent border-0 pr-2 pr-sm-3"
+                  id="basic-addon1"
+                >
+                  <i className="mdi mdi-magnify"></i>
+                </span>
+                </div>
+                <input
+                  type="search"
+                  className="form-control"
+                  placeholder="Search"
+                  aria-label="Search Dashboard"
+                />
+                <div className="drop-down animated flipInX d-md-none">
+                  <form action="#">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Search"
+                    />
+                  </form>
+                </div>
                 <button className="nav-btn" onClick={handleclickhome}>
                   Home
                 </button>
@@ -65,26 +88,12 @@ function Header() {
                 <button className="nav-btn" onClick={handleclickcontests}>
                   Contests
                 </button>
-                <button className="auth-btn" onClick={handleclicklogin}>
-                  Log Out
-                </button> 
-              </div>
             </div>
           </div>
           <div className="header-right">
-            <ul className="clearfix">
-              <li className="icons dropdown">
-                <div
-                  className="user-img c-pointer position-relative"
-                  data-toggle="dropdown"
-                >
-                  <span className="activity active"></span>
-                  <button onClick={handleclickprofile}>
-                    <img src={avatar} height="40" width="40" alt="" />
-                  </button>
-                </div>
-              </li>
-            </ul>
+            <button className="auth-btn" onClick={handleclicklogin}>
+                Sign-In/Sign-Up
+            </button>
           </div>
         </div>
       </div>

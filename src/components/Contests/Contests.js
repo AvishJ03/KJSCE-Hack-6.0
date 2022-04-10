@@ -13,6 +13,8 @@ import {
   Checkbox,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
+import './Contests.css'
+import Header from '../../MyComponents/Header'
 
 const Contests = () => {
   const [value, setValue] = useState("all");
@@ -71,6 +73,7 @@ const Contests = () => {
 
   return (
     <>
+      <Header />
       <HStack justify="center" spacing="20px">
         <Select
           placeholder="Select Platform"

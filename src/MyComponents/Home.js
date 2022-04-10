@@ -6,9 +6,6 @@ import banner_img from '../images/title-img.png'
 import news from '../images/news.png'
 import logo_concept from '../images/logo-no-bg.png'
 import gif from '../images/imageedit_2_4114114697.gif'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-// import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 function Home() {
   return (
