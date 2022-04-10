@@ -4,6 +4,7 @@ import Profile from "./MyComponents/Profile";
 /* import Contests from './components/Contests/Contests'; */
 import Login from "./components/Login/Login";
 import Signup from "./components/Login/Signup";
+import Courses from "./pages/courses/Courses";
 import Contests from "./components/Contests/Contests";
 import QuizPage from "./components/quiz/QuizPage";
 import Quiz from "./components/quiz/Quiz";
@@ -29,6 +30,7 @@ function App() {
       <Route path="/quizlets" element={<QuizPage />} exact={true} />
       <Route path="/contests" element={<Contests />} />
       <Route path="/quiz" element={<Quiz />} exact={true} />
+      <Route path="/courses" element={<Courses />} exact={true} />
       <Route path="/login" element={<Login />} exact={true} />
       <Route path="/signup" element={<Signup />} exact={true} />
       <Route exact path="/list_of_experiments" element={<ExperimentList />} />

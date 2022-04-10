@@ -133,8 +133,8 @@ function Home() {
             <div className="row">
               <div className="col-12">
                 <div className="section-title mb-4">
-                  <h2 className="mb-3">Choose Your Subscription Plan</h2>
-                  <p>Get yourself access to the various services we provide, to build your future with the power of AI. </p>
+                  <h2 className="mb-3" style={{color: 'white', fontWeight: 'bold'}}>Choose Your Subscription Plan</h2>
+                  <p style={{color: 'white'}}>Get yourself access to the various services we provide, to build your future with the power of AI. </p>
                 </div>
               </div>
             </div>

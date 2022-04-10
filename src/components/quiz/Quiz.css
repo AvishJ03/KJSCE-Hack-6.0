@@ -1,83 +1,92 @@
- .quiz-app {
-    background-color: #ffffff;
-    width: 100vw;
-    height: 81vh;
-    border-radius: 15px;
-    padding: 20px;
-    color: #000000;
-  }
-  
-  .score-section {
-    display: flex;
-    font-size: 4em;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .question-section {
-    width: 100vw;
-  }
-  
-  .question-count {
-    margin-bottom: 20px;
-  }
-  
-  .question-count span {
-    font-size: 28px;
-  }
-  
-  .question-text {
-    margin-bottom: 12px;
-    font-size: 1.2em;
-  }
-  
-  .timer-text {
-    background: rgb(230, 153, 12);
-    padding: 15px;
-    margin-top: 20px;
-    margin-right: 20px;
-    border-radius: 8px;
-    text-align: center;
-  }
-  
-  .answer-section {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .option-btn {
-    width: 40vw;
-    height: 8vh;
-    font-size: 1.2em;
-    color: #ffffff;
-    background-image: linear-gradient(230deg, #759bff, #843cf6);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    padding: 5px;
-    cursor: pointer;
-    margin: 10px;
-  }
-  
-  .correct {
-    background-color: #2f922f;
-  }
-  
-  .incorrect {
-    background-color: #ff3333;
-  }
-  
-  .option-btn:hover {
-    background-color: #555e7d;
-  }
-  
-  .option-btn:focus {
-    outline: none;
-  }
-  
-  .option-btn svg {
-    margin-right: 5px;
-  }
-  
+.quiz-app {
+  background-color: #ffffff;
+  width: 100vw;
+  height: 81vh;
+  border-radius: 15px;
+  padding: 20px;
+  color: #000000;
+}
+
+.score-section {
+  display: flex;
+  font-size: 4em;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.go-back{
+  width: 10%;
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 25px;
+  background-image: linear-gradient(230deg, #759bff, #843cf6);
+  color: white;
+}
+
+.question-section {
+  width: 100vw;
+}
+
+.question-count {
+  margin-bottom: 20px;
+}
+
+.question-count span {
+  font-size: 28px;
+}
+
+.question-text {
+  margin-bottom: 12px;
+  font-size: 1.2em;
+}
+
+.timer-text {
+  background: rgb(230, 153, 12);
+  padding: 15px;
+  margin-top: 20px;
+  margin-right: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.answer-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.option-btn {
+  width: 40vw;
+  height: 8vh;
+  font-size: 1.2em;
+  color: #ffffff;
+  background-image: linear-gradient(230deg, #759bff, #843cf6);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.correct {
+  background-color: #2f922f;
+}
+
+.incorrect {
+  background-color: #ff3333;
+}
+
+.option-btn:hover {
+  background-color: #555e7d;
+}
+
+.option-btn:focus {
+  outline: none;
+}
+
+.option-btn svg {
+  margin-right: 5px;
+}

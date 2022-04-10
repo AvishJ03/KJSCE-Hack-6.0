@@ -12,13 +12,13 @@ function QuizPage() {
   return (
     <div className='quiz-page-wrapper'>
         <Header />
-        <h1 className='quiz-page-title'>Quizzes</h1>
+        <h1 className='quiz-page-title headingclass' >Quizzes</h1>
         <div className='row'>
-            <div className="col-md-6 col-lg-3">
+            <div className="col-md-6 col-lg-3 cutomclasshetvi">
                 <div className="card text-center">
                     <div className="card-body">
                         <h5 className="card-title">Special title treatment</h5>
-                        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p><button className="btn btn-primary" onClick={handleclickquiz}>Take Test</button>
+                        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p><button className="btn btn-primary btn-hetvi" onClick={handleclickquiz}>Take Test</button>
                     </div>
                     <div className="card-footer text-muted">Last updated 5 min ago</div>
                 </div>
@@ -27,7 +27,7 @@ function QuizPage() {
                 <div className="card text-center">
                     <div className="card-body">
                         <h5 className="card-title">Special title treatment</h5>
-                        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p><button className="btn btn-primary" onClick={handleclickquiz}>Take Test</button>
+                        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p><button className="btn btn-primary btn-hetvi" onClick={handleclickquiz}>Take Test</button>
                     </div>
                     <div className="card-footer text-muted">Last updated 5 min ago</div>
                 </div>
@@ -36,7 +36,7 @@ function QuizPage() {
                 <div className="card text-center">
                     <div className="card-body">
                         <h5 className="card-title">Special title treatment</h5>
-                        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p><button className="btn btn-primary" onClick={handleclickquiz}>Take Test</button>
+                        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p><button className="btn btn-primary btn-hetvi" onClick={handleclickquiz}>Take Test</button>
                     </div>
                     <div className="card-footer text-muted">Last updated 5 min ago</div>
                 </div>
@@ -45,7 +45,7 @@ function QuizPage() {
                 <div className="card text-center">
                     <div className="card-body">
                         <h5 className="card-title">Special title treatment</h5>
-                        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p><button className="btn btn-primary" onClick={handleclickquiz}>Take Test</button>
+                        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p><button className="btn btn-primary btn-hetvi" onClick={handleclickquiz}>Take Test</button>
                     </div>
                     <div className="card-footer text-muted">Last updated 5 min ago</div>
                 </div>
@@ -56,7 +56,7 @@ function QuizPage() {
                 <div className="card text-center">
                     <div className="card-body">
                         <h5 className="card-title">Special title treatment</h5>
-                        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p><button className="btn btn-primary" onClick={handleclickquiz}>Take Test</button>
+                        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p><button className="btn btn-primary btn-hetvi" onClick={handleclickquiz}>Take Test</button>
                     </div>
                     <div className="card-footer text-muted">Last updated 5 min ago</div>
                 </div>
@@ -65,7 +65,7 @@ function QuizPage() {
                 <div className="card text-center">
                     <div className="card-body">
                         <h5 className="card-title">Special title treatment</h5>
-                        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p><button className="btn btn-primary" onClick={handleclickquiz}>Take Test</button>
+                        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p><button className="btn btn-primary btn-hetvi" onClick={handleclickquiz}>Take Test</button>
                     </div>
                     <div className="card-footer text-muted">Last updated 5 min ago</div>
                 </div>
@@ -74,7 +74,7 @@ function QuizPage() {
                 <div className="card text-center">
                     <div className="card-body">
                         <h5 className="card-title">Special title treatment</h5>
-                        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p><button className="btn btn-primary" onClick={handleclickquiz}>Take Test</button>
+                        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p><button className="btn btn-primary btn-hetvi" onClick={handleclickquiz}>Take Test</button>
                     </div>
                     <div className="card-footer text-muted">Last updated 5 min ago</div>
                 </div>
@@ -83,7 +83,7 @@ function QuizPage() {
                 <div className="card text-center">
                     <div className="card-body">
                         <h5 className="card-title">Special title treatment</h5>
-                        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p><button className="btn btn-primary" onClick={handleclickquiz}>Take Test</button>
+                        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p><button className="btn btn-primary btn-hetvi" onClick={handleclickquiz}>Take Test</button>
                     </div>
                     <div className="card-footer text-muted">Last updated 5 min ago</div>
                 </div>
