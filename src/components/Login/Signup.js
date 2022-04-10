@@ -2,12 +2,18 @@ import React, { useState } from "react";
 import "./Login.css";
 import { db, auth } from "../../utils/init-firebase";
 import { useAuth } from "../../contexts/AuthContext";
-import { BrowserRouter, Route, NavLink, Link, useNavigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Route,
+  NavLink,
+  Link,
+  useNavigate,
+} from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { login, currentUser } = useAuth();
+  const { register, currentUser } = useAuth();
   const [isSubmiting, setIsSubmiting] = useState(false);
 
   function handleEmail(e) {
@@ -17,21 +23,23 @@ export default function Login() {
     setPassword(e.target.value);
   }
 
-  const log = async (e) => {
+  const sign = async (e) => {
     e.preventDefault();
     // your login logic here
     if (!email || !password) {
       console.log("Please enter email and password");
     }
     setIsSubmiting(true);
-    login(email, password);
-    // navigate("/dashboard");
+    register(email, password);
+    {
+      currentUser && navigate("/home");
+    }
     console.log(currentUser);
   };
 
-  const navigate=useNavigate()
-  function handleclicklogin(){
-    navigate('/login')
+  const navigate = useNavigate();
+  function handleclicklogin() {
+    navigate("/login");
   }
   return (
     <div className="login-container">
@@ -61,18 +69,21 @@ export default function Login() {
                   type="password"
                   placeholder="Confirm Password"
                   className="input"
-                  value={password}
-                  onChange={handlePassword}
                 />
               </div>
-              <button value="Submit" className="submit-button" onClick={log}>
+              <button value="Submit" className="submit-button" onClick={sign}>
                 Create Account
               </button>
             </div>
           </form>
           <div className="login-below slide-up">
             <div className="center">
-              <p className="login-text">or <button className="auth-btn" onClick={handleclicklogin}>Log In</button></p>
+              <p className="login-text">
+                or{" "}
+                <button className="auth-btn" onClick={handleclicklogin}>
+                  Log In
+                </button>
+              </p>
             </div>
           </div>
         </div>
