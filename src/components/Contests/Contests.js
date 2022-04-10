@@ -22,7 +22,11 @@ const Contests = () => {
   const [contest, setContest] = useState([]);
 
   function handleChange(e) {
-    setValue(e.target.value);
+    if(e.target.value==="none"){
+      setValue("all")
+    }else{
+      setValue(e.target.value);
+    }
     console.log(e.target.value);
   }
   function handleCheck(e) {
@@ -80,6 +84,7 @@ const Contests = () => {
           onChange={handleChange}
           value={value}
           m={10}
+          ml={48}
           maxW="container.md"
         >
           <option value="hacker_rank">HackerRank</option>
@@ -90,12 +95,13 @@ const Contests = () => {
           <option value="codeforces">CodeForces</option>
           <option value="top_coder">TopCoder</option>
           <option value="kick_start">Kick Start</option>
+          <option value="none">None</option>
         </Select>
         <Checkbox isChecked={checked} onChange={handleCheck} w="lg">
           In 24 hours?
         </Checkbox>
       </HStack>
-      <Container maxW="container.xl" m={10}>
+      <Container maxW="container.xl" m={10} ml={24}>
         <TableContainer whiteSpace="wrap">
           <Table size="md" variant="striped" colorScheme="purple">
             <Thead>
