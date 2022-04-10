@@ -1,22 +1,24 @@
 .nav-btn {
-    margin: 10px 20px 10px 20px;
-    width: 8vw;
+    margin: 5px 10px 5px 10px;
+    width: 8.4vw;
     border: 0;
-    font-size: 1em;
-    font-weight: 200;
+    font-size: 1.3em;
+    /* font-weight: 200; */
     background-color: transparent;
     box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.480);
+    /* box-shadow:0 0 20px 0 rgba(0, 0, 0, 0.2); */
     transition: all 0.4s ease;
+    font-weight: bolder;
 }
 .nav-btn:hover {
-    width: 8.4;
+    width: 8.8vw;
     border: 0;
-    font-size: 1.2em;
-    font-weight: 480;
+    font-size: 1.5em;
+    /* font-weight: 480; */
     box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.640);
 }
 .nav-btn:focus {
-    width: 8.4;
+    width: 8.8vw;
     border: 0;
     font-size: 1.2em;
     font-weight: 480;
@@ -28,4 +30,7 @@
     font-size: 1.2em;
     font-weight: 480;
     box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.640);
+}
+.auth-btn {
+    margin: 22px 0px 0px 8px;
 }

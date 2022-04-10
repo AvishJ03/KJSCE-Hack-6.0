@@ -2,20 +2,21 @@ import React, { useState } from "react";
 import "./Login.css";
 import { db, auth } from "../../utils/init-firebase";
 import { useAuth } from "../../contexts/AuthContext";
-import {
-  BrowserRouter,
-  Route,
-  NavLink,
-  Link,
-  useNavigate,
-} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { collection, addDoc } from "firebase/firestore";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [username, setUserName] = useState("");
   const { register, currentUser } = useAuth();
   const [isSubmiting, setIsSubmiting] = useState(false);
+  const userCollectionRef = collection(db, "users");
 
+  function handleName(e) {
+    setUserName(e.target.value);
+  }
   function handleEmail(e) {
     setEmail(e.target.value);
   }
@@ -30,11 +31,22 @@ export default function Login() {
       console.log("Please enter email and password");
     }
     setIsSubmiting(true);
-    register(email, password);
-    {
-      currentUser && navigate("/home");
+    try {
+      const authUser = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      console.log("Firebase Signup Succesfull ", authUser);
+      await addDoc(userCollectionRef, {
+        user_id: authUser.user.uid,
+        name: username,
+        score: [],
+      });
+    } catch (error) {
+      console.log(error);
     }
-    console.log(currentUser);
+    navigate("/");
   };
 
   const navigate = useNavigate();
@@ -52,6 +64,13 @@ export default function Login() {
             <div className="flex-col-full-center">
               <div className="login-input-wrapper">
                 <input
+                  type="text"
+                  placeholder="Full Name"
+                  className="input"
+                  value={username}
+                  onChange={handleName}
+                />
+                <input
                   type="email"
                   placeholder="Email"
                   value={email}
@@ -64,11 +83,6 @@ export default function Login() {
                   className="input"
                   value={password}
                   onChange={handlePassword}
-                />
-                <input
-                  type="password"
-                  placeholder="Confirm Password"
-                  className="input"
                 />
               </div>
               <button value="Submit" className="submit-button" onClick={sign}>

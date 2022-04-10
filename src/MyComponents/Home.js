@@ -6,9 +6,6 @@ import banner_img from '../images/title-img.png'
 import news from '../images/news.png'
 import logo_concept from '../images/logo-no-bg.png'
 import gif from '../images/imageedit_2_4114114697.gif'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-// import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 function Home() {
   return (
@@ -133,8 +130,8 @@ function Home() {
             <div className="row">
               <div className="col-12">
                 <div className="section-title mb-4">
-                  <h2 className="mb-3">Choose Your Subscription Plan</h2>
-                  <p>Get yourself access to the various services we provide, to build your future with the power of AI. </p>
+                  <h2 className="mb-3" style={{color: 'white', fontWeight: 'bold'}}>Choose Your Subscription Plan</h2>
+                  <p style={{color: 'white'}}>Get yourself access to the various services we provide, to build your future with the power of AI. </p>
                 </div>
               </div>
             </div>
