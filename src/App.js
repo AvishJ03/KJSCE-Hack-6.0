@@ -8,7 +8,6 @@ import Theory from "./components/theory/theory";
 import Visualisation from "./components/visualisation/visualisation.jsx";
 // import Homepage from "./pages/homepage/homepage";
 
-const Objective = lazy(() => import("./pages/objective/objective"));
 const ExperimentList = lazy(() =>
   import("./pages/experiment-list/experiment-list.jsx")
 );
