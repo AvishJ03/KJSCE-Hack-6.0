@@ -1,7 +1,5 @@
 import React from "react";
 import Webcam from "react-webcam"
-import Header from '../../MyComponents/Header'
-import Footer from '../../MyComponents/Footer'
 import './Cam.css'
 
 const Cam = () => {
@@ -56,7 +54,7 @@ const Cam = () => {
 
   return (
     <>
-    <Header />
+    
     <div className="video-rec">'
       <Webcam audio={false} ref={webcamRef} />
       {capturing ? (
@@ -68,7 +66,7 @@ const Cam = () => {
         <button className="btn-main-rounded" onClick={handleDownload}>Download</button>
       )}
     </div>
-    <Footer />
+    
     </>
   );
 };
