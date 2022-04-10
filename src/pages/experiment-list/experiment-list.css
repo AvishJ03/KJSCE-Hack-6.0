@@ -1,0 +1,12 @@
+.list1 {
+  margin-top: 3rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+.list2 {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 5px 8px rgb(0 0 0 / 10%);
+  border-radius: 1rem;
+  color: blue;
+}
