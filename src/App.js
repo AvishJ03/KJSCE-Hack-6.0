@@ -1,7 +1,6 @@
 import "./App.css";
 import Home from "./MyComponents/Home";
 import Profile from "./MyComponents/Profile";
-/* import Contests from './components/Contests/Contests'; */
 import Login from "./components/Login/Login";
 import Signup from "./components/Login/Signup";
 import Courses from "./pages/courses/Courses";
@@ -9,9 +8,12 @@ import Contests from "./components/Contests/Contests";
 import QuizPage from "./components/quiz/QuizPage";
 import Quiz from "./components/quiz/Quiz";
 import Theory from "./components/theory/theory";
+import Landing from "./MyComponents/Landing";
+import { useAuth } from "./contexts/AuthContext";
 import Visualisation from "./components/visualisation/visualisation.jsx";
 import { BrowserRouter, Route, NavLink, Link, Routes } from "react-router-dom";
 import { lazy } from "react";
+import Interview from "./components/Interview/Interview";
 
 const PageNotFound = () => <div>404</div>;
 const ExperimentList = lazy(() =>
@@ -22,9 +24,15 @@ const IndividualExperiment = lazy(() =>
 );
 
 function App() {
+  const { currentUser } = useAuth();
   return (
     <Routes>
-      <Route path="/" element={<Home />} exact={true} />
+      {currentUser ? (
+        <Route path="/" element={<Home />} exact={true} />
+      ) : (
+        <Route path="/" element={<Landing />} exact={true} />
+      )}
+
       <Route path="/home" element={<Home />} exact={true} />
       <Route path="/profile" element={<Profile />} exact={true} />
       <Route path="/quizlets" element={<QuizPage />} exact={true} />
@@ -45,10 +53,10 @@ function App() {
         path="/experiments/bblsort/visualisation"
         element={<Visualisation param="bblsort" />}
       />
-      {/*         <Route path='/contests' element={<Signup />} exact={true} />
-        <Route path='/interviews' element={<Signup />} exact={true} />
-        <Route path='/courses' element={<Signup />} exact={true} /> */}
-      {/* <Route path='/contests' element={<Contests />} exact={true} /> */}
+        {/* <Route path='/contests' element={<Signup />} exact={true} /> */}
+        <Route path='/interviews' element={<Interview />} exact={true} />
+        {/* <Route path='/courses' element={<Signup />} exact={true} /> */} 
+        {/* <Route path='/contests' element={<Contests />} exact={true} /> */}
     </Routes>
   );
 }
