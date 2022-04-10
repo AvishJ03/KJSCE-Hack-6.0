@@ -1,5 +1,8 @@
 import React from "react";
 import Webcam from "react-webcam"
+import Header from '../../MyComponents/Header'
+import Footer from '../../MyComponents/Footer'
+import './Cam.css'
 
 const Cam = () => {
   const webcamRef = React.useRef(null);
@@ -53,15 +56,19 @@ const Cam = () => {
 
   return (
     <>
+    <Header />
+    <div className="video-rec">'
       <Webcam audio={false} ref={webcamRef} />
       {capturing ? (
-        <button onClick={handleStopCaptureClick}>Stop Capture</button>
+        <button className="btn-main-rounded" onClick={handleStopCaptureClick}>Stop Capture</button>
       ) : (
-        <button onClick={handleStartCaptureClick}>Start Capture</button>
+        <button className="btn-main-rounded" onClick={handleStartCaptureClick}>Start Capture</button>
       )}
       {recordedChunks.length > 0 && (
-        <button onClick={handleDownload}>Download</button>
+        <button className="btn-main-rounded" onClick={handleDownload}>Download</button>
       )}
+    </div>
+    <Footer />
     </>
   );
 };

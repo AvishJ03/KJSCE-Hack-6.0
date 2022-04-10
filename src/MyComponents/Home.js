@@ -245,9 +245,6 @@ function Home() {
                   <form action="#">
                     <div className="input-group">
                       <input type="text" className="form-control" placeholder="Enter your email address" />
-                      <div className="input-group-append">
-                        <span className="input-group-text ti-arrow-right"></span>
-                      </div>
                     </div>
                   </form>
                 </div>

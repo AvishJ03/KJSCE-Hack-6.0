@@ -1,0 +1,28 @@
+.video-rec {
+    width: 100vw;
+    height: 81vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #d06af9, #8c00ff, #d0a5ff, #9500ff);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;    
+} 
+
+  
+  @keyframes gradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+
+  .video-rec button {
+    position: absolute;
+    top: 14%;
+}
