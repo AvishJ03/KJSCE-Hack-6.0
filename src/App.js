@@ -68,7 +68,7 @@ function App() {
         <Route path='/interviews' element={<Interview />} exact={true} />
         <Route path='/temp' element={<Chatbot />} exact={true} />
         {/* <Route path='/courses' element={<Chatbot />} exact={true} />  */}
-        {/* <Route path='/contests' element={<Contests />} exact={true} /> */}
+       
     </Routes>
   );
 }
