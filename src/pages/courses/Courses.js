@@ -7,7 +7,7 @@ import Footer from "../../MyComponents/Footer";
 const Courses = () => {
   const navigate = useNavigate();
   function handleClick() {
-    navigate("/experiments/bblsort/visualisation");
+    navigate("/experiments/bblsort/visualisation")
   }
   return (
     <>
