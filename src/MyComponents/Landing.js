@@ -1,5 +1,5 @@
 import "./Home.css";
-import React from "react";
+import React, {useState} from "react";
 import Header2 from "./Header2";
 import Footer from "./Footer";
 import banner_img from "../images/title-img.png";
@@ -7,15 +7,22 @@ import news from "../images/news.png";
 import logo_concept from "../images/logo-no-bg.png";
 import gif from "../images/imageedit_2_4114114697.gif";
 import { useNavigate } from "react-router-dom";
+import Chatbot from '../components/Chatbot/Chatbot'
 
 function Home() {
   const navigate = useNavigate();
-  function handleclicklogin() {
+  function handleclicklogin(e) {
+    e.preventDefault();
     navigate("/login");
   }
+
+
   return (
     <div>
       <Header2 />
+      <div className='chatbot'>
+        <Chatbot />
+      </div>
       <div className="wrapper">
         <section className="banner bg-1" id="home">
           <div className="container">
@@ -206,7 +213,7 @@ function Home() {
                       className="btn btn-main-rounded"
                       onClick={handleclicklogin}
                     >
-                      Start Now
+                      Pay Now
                     </a>
                   </div>
                 </div>
@@ -233,7 +240,7 @@ function Home() {
                       className="btn btn-main-rounded"
                       onClick={handleclicklogin}
                     >
-                      Start Now
+                      Pay Now
                     </a>
                   </div>
                 </div>
@@ -260,7 +267,7 @@ function Home() {
                       className="btn btn-main-rounded"
                       onClick={handleclicklogin}
                     >
-                      Start Now
+                      Pay Now
                     </a>
                   </div>
                 </div>
@@ -346,9 +353,6 @@ function Home() {
                         className="form-control"
                         placeholder="Enter your email address"
                       />
-                      <div className="input-group-append">
-                        <span className="input-group-text ti-arrow-right"></span>
-                      </div>
                     </div>
                   </form>
                 </div>

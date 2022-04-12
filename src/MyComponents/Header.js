@@ -15,16 +15,20 @@ import {
 function Header() {
   const { currentUser, logout } = useAuth();
   const navigate = useNavigate();
-  function handleclickhome() {
+  function handleclickhome(e) {
+    e.preventDefault();
     navigate("/home");
   }
-  function handleclickquizlets() {
+  function handleclickquizlets(e) {
+    e.preventDefault();
     navigate("/quizlets");
   }
-  function handleclickprofile() {
+  function handleclickprofile(e) {
+    e.preventDefault();
     navigate("/profile");
   }
-  function handleclickcontests() {
+  function handleclickcontests(e) {
+    e.preventDefault();
     navigate("/contests");
   }
   function handleclicklogout() {
@@ -33,10 +37,12 @@ function Header() {
       !currentUser && navigate("/login");
     }
   }
-  function handleclickinterviews() {
+  function handleclickinterviews(e) {
+    e.preventDefault();
     navigate("/interviews");
   }
-  function handleclickcourses() {
+  function handleclickcourses(e) {
+    e.preventDefault();
     navigate("/courses");
   }
   return (

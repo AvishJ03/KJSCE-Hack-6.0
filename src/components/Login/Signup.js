@@ -50,7 +50,8 @@ export default function Login() {
   };
 
   const navigate = useNavigate();
-  function handleclicklogin() {
+  function handleclicklogin(e) {
+    e.preventDefault();
     navigate("/login");
   }
   return (

@@ -38,7 +38,8 @@ export default function Login() {
   };
 
   const navigate = useNavigate();
-  function handleclicksignup() {
+  function handleclicksignup(e) {
+    e.preventDefault();
     navigate("/signup");
   }
 

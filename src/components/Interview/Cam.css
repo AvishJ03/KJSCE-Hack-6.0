@@ -26,3 +26,8 @@
     position: absolute;
     top: 14%;
 }
+
+.down-btn {
+    position: relative;
+    top: 74% !important;
+}

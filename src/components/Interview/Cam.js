@@ -1,6 +1,6 @@
 import React from "react";
-import Webcam from "react-webcam"
-import './Cam.css'
+import Webcam from "react-webcam";
+import "./Cam.css";
 
 const Cam = () => {
   const webcamRef = React.useRef(null);
@@ -22,7 +22,7 @@ const Cam = () => {
 
   const handleDataAvailable = React.useCallback(
     ({ data }) => {
-      if (data.size > 0) { 
+      if (data.size > 0) {
         setRecordedChunks((prev) => prev.concat(data));
       }
     },
@@ -54,19 +54,27 @@ const Cam = () => {
 
   return (
     <>
-    
-    <div className="video-rec">'
-      <Webcam audio={false} ref={webcamRef} />
-      {capturing ? (
-        <button className="btn-main-rounded" onClick={handleStopCaptureClick}>Stop Capture</button>
-      ) : (
-        <button className="btn-main-rounded" onClick={handleStartCaptureClick}>Start Capture</button>
-      )}
-      {recordedChunks.length > 0 && (
-        <button className="btn-main-rounded" onClick={handleDownload}>Download</button>
-      )}
-    </div>
-    
+      <div className="video-rec">
+        '
+        <Webcam audio={false} ref={webcamRef} />
+        {capturing ? (
+          <button className="btn-main-rounded" onClick={handleStopCaptureClick}>
+            Stop Capture
+          </button>
+        ) : (
+          <button
+            className="btn-main-rounded"
+            onClick={handleStartCaptureClick}
+          >
+            Start Capture
+          </button>
+        )}
+        {recordedChunks.length > 0 && (
+          <button className="btn-main-rounded down-btn" onClick={handleDownload}>
+            Download
+          </button>
+        )}
+      </div>
     </>
   );
 };

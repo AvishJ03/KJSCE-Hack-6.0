@@ -1480,6 +1480,8 @@ select.form-control[size], select.form-control[multiple] {
   height: auto; }
 
 textarea.form-control {
+  width: 100%;
+  margin-left: 2px;
   height: auto; }
 
 .form-group {

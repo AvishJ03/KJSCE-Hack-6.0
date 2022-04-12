@@ -25,15 +25,43 @@ function App() {
       ) : (
         <Route path="/" element={<Landing />} exact={true} />
       )}
-
-      <Route path="/home" element={<Home />} exact={true} />
-      <Route path="/profile" element={<Profile />} exact={true} />
-      <Route path="/quizlets" element={<QuizPage />} exact={true} />
-      <Route path="/contests" element={<Contests />} />
-      <Route path="/quiz" element={<Quiz />} exact={true} />
-      <Route path="/courses" element={<Courses />} exact={true} />
+      {currentUser ? (
+        <Route path="/profile" element={<Profile />} exact={true} />
+      ) : (
+        <Route path="/profile" element={<Landing />} exact={true} />
+      )}
+      {currentUser ? (
+        <Route path="/quizlets" element={<QuizPage />} exact={true} />
+      ) : (
+        <Route path="/quizlets" element={<Landing />} exact={true} />
+      )}
+      {currentUser ? (
+        <Route path="/contests" element={<Contests />} />
+      ) : (
+        <Route path="/contests" element={<Landing />} exact={true} />
+      )}
+      {currentUser ? (
+        <Route path="/quiz" element={<Quiz />} />
+      ) : (
+        <Route path="/quiz" element={<Landing />} exact={true} />
+      )}
+      {currentUser ? (
+        <Route path="/courses" element={<Courses />} exact={true} />
+      ) : (
+        <Route path="/courses" element={<Landing />} exact={true} />
+      )}
       <Route path="/login" element={<Login />} exact={true} />
       <Route path="/signup" element={<Signup />} exact={true} />
+      {currentUser ? (
+        <Route path='/interviews' element={<Interview />} exact={true} />
+      ) : (
+        <Route path="/interviews" element={<Landing />} exact={true} />
+      )}
+      <Route path="/home" element={<Home />} exact={true} />
+      
+      
+      
+      
       <Route
         exact
         path="/experiments/bblsort/theory"
@@ -64,11 +92,9 @@ function App() {
         path="/experiments/bblsort/visualisation"
         element={<Visualisation param="bblsort" />}
       />
-        {/* <Route path='/contests' element={<Signup />} exact={true} /> */}
-        <Route path='/interviews' element={<Interview />} exact={true} />
+        
         <Route path='/temp' element={<Chatbot />} exact={true} />
-        {/* <Route path='/courses' element={<Chatbot />} exact={true} />  */}
-       
+      
     </Routes>
   );
 }

@@ -144,7 +144,8 @@ const Quiz = () => {
     await getUser();
     await updateLevel();
   };
-  function handleHome() {
+  function handleHome(e) {
+    e.preventDefault();
     AddScore();
     navigate("/quizlets");
   }
@@ -173,9 +174,10 @@ const Quiz = () => {
               {questions[currentQuestion].answerOptions.map((answerOption) => (
                 <button
                   className="option-btn"
-                  onClick={() =>
-                    handleAnswerOptionClick(answerOption.isCorrect)
-                  }
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleAnswerOptionClick(answerOption.isCorrect);
+                  }}
                 >
                   {answerOption.answerText}
                 </button>

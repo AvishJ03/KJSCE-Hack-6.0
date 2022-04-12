@@ -4,7 +4,16 @@ import "./Profile.css";
 import profile from "../images/pfp.png";
 import { useAuth } from "../contexts/AuthContext";
 import { db, auth } from "../utils/init-firebase";
-
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  Cell,
+} from "recharts";
 import React, { useState, useEffect } from "react";
 import {
   collection,
@@ -16,11 +25,64 @@ import {
 } from "firebase/firestore";
 
 function Profile() {
+  // const color1 = ["#92A3FD", "#9DCEFF"];
+  // const color2 = ["#C58BF2", "#EEA4CE"];
+  // const barColors = ["#92A3FD", "#C58BF2"];
+  // const data = [];
+  const data = [
+    {
+      name: "Quiz 1",
+      Score: 3,
+    },
+    {
+      name: "Quiz 2",
+      Score: 3,
+    },
+    {
+      name: "Quiz 3",
+      Score: 2,
+    },
+    {
+      name: "Quiz 4",
+      Score: 1,
+    },
+    {
+      name: "Quiz 5",
+      Score: 1,
+    },
+    {
+      name: "Quiz 6",
+      Score: 1,
+    },
+    {
+      name: "Quiz 7",
+      Score: 2,
+    },
+  ];
   const { currentUser } = useAuth();
   const [name, setName] = useState("");
+  var score = [];
   const uid = currentUser?.uid;
+  const [total, setTotal] = useState(0);
+  var t = 0;
+  const color1 = ["#92A3FD", "#9DCEFF"];
+  const color2 = ["#C58BF2", "#EEA4CE"];
+  const barColors = ["#92A3FD", "#C58BF2"];
 
   useEffect(() => {
+    const getTotal = (arr) => {
+      arr.forEach((element) => {
+        t = t + element;
+      });
+    };
+    // const getData = (arr) => {
+    //   arr.forEach((element, index) => {
+    //     data.push({
+    //       Quiz: `Quiz ${index + 1}`,
+    //       Score: element,
+    //     });
+    //   });
+    // };
     const getUser = async () => {
       try {
         const userRef = collection(db, "users");
@@ -32,12 +94,18 @@ function Profile() {
         const docSnap = await getDoc(userDoc);
         // console.log(docSnap.data().name);
         setName(docSnap.data().name);
+        score = docSnap.data().score;
+        console.log(score);
+        getTotal(score);
+        // getData();
+        setTotal(t);
+        console.log(total);
       } catch (error) {
         console.log(error);
       }
     };
     getUser();
-  }, [name]);
+  }, [name, total]);
 
   return (
     <div>
@@ -78,6 +146,12 @@ function Profile() {
                         <p className="text-muted">Followers</p>
                       </div>
                     </div>
+                    <div className="col">
+                      <div className="card card-profile text-center">
+                        <h3 className="mb-0">{total}</h3>
+                        <p className="text-muted">Score</p>
+                      </div>
+                    </div>
                     <div className="col-12 text-center">
                       <button className="btn btn-danger px-5">
                         Follow Now
@@ -87,7 +161,7 @@ function Profile() {
 
                   <h4>About Me</h4>
                   <p className="text-muted">
-                    Hi, I'm Jay. Working as a developer
+                    Hi, I'm {name}. Working as a developer
                   </p>
                   <ul className="card-profile__info">
                     <li className="mb-1">
@@ -96,7 +170,7 @@ function Profile() {
                     </li>
                     <li>
                       <strong className="text-dark mr-4">Email</strong>{" "}
-                      <span>jay4codes@gmail.com</span>
+                      <span>avish@gmail.com</span>
                     </li>
                   </ul>
                 </div>
@@ -171,8 +245,53 @@ function Profile() {
                 </div>
               </div>
             </div>
+            <div className="chartss">
+              <BarChart
+                width={700}
+                height={300}
+                data={data}
+                barCategoryGap={15}
+                margin={{
+                  top: 5,
+                  right: 30,
+                  left: 20,
+                  bottom: 5,
+                }}
+                padding={{
+                  right: 30,
+                  left: 20,
+                }}
+              >
+                <defs>
+                  <linearGradient
+                    id="colorUv"
+                    x1="100%"
+                    y1="100%"
+                    x2="0%"
+                    y2="100%"
+                    spreadMethod="reflect"
+                  >
+                    <stop offset="0" stopColor="#C58BF2" />
+                    <stop offset="1" stopColor="#EEA4CE" />
+                  </linearGradient>
+                </defs>
+                <CartesianGrid strokeDasharray="2 2" />
+                <XAxis dataKey="name" />
+                <YAxis dataKey="Score" />
+                <Tooltip />
+                <Legend />
+                <Bar
+                  dataKey="Score"
+                  /*fill="url(#colorUv)"*/ radius={[20, 20, 20, 20]}
+                >
+                  {data.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={barColors[index % 2]} />
+                  ))}
+                </Bar>
+              </BarChart>
+            </div>
           </div>
-          <div class="row">
+          <div class="row hetviclasshetvi">
             <div class="col-lg-12">
               <div class="card">
                 <div class="card-body">
@@ -181,84 +300,84 @@ function Profile() {
                       <table class="table table-xs mb-0">
                         <thead>
                           <tr>
-                            <th>Customers</th>
-                            <th>Product</th>
-                            <th>Country</th>
-                            <th>Payment Method</th>
+                            <th>Courses</th>
+                            <th>Quiz</th>
+                            <th>Difficulty</th>
+                            <th>Status</th>
                             <th>Activity</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
-                            <td>Sarah Smith</td>
-                            <td>iPhone X</td>
+                            <td>Sorting Algorithms</td>
+                            <td>2/4</td>
                             <td>
-                              <span>United States</span>
+                              <span>Easy</span>
                             </td>
-                            <td>Paid</td>
+                            <td>Completed</td>
                             <td>
                               <span>Last Login</span>
-                              <span class="m-0 pl-3">10 sec ago</span>
+                              <span class="m-0 pl-3">10 days ago</span>
                             </td>
                           </tr>
                           <tr>
-                            <td>Walter R.</td>
-                            <td>Pixel 2</td>
+                            <td>Trees</td>
+                            <td>3/4</td>
                             <td>
-                              <span>Canada</span>
+                              <span>Easy</span>
                             </td>
-                            <td>Paid</td>
+                            <td>Completed</td>
                             <td>
                               <span>Last Login</span>
-                              <span class="m-0 pl-3">50 sec ago</span>
+                              <span class="m-0 pl-3">50 days ago</span>
                             </td>
                           </tr>
                           <tr>
-                            <td>Andrew D.</td>
-                            <td>OnePlus</td>
+                            <td>Queues</td>
+                            <td>Not Attempted</td>
                             <td>
-                              <span>Germany</span>
+                              <span>Medium</span>
                             </td>
-                            <td> Pending</td>
+                            <td>Incompleted</td>
                             <td>
                               <span>Last Login</span>
-                              <span class="m-0 pl-3">10 sec ago</span>
+                              <span class="m-0 pl-3">10 days ago</span>
                             </td>
                           </tr>
                           <tr>
-                            <td>Megan S.</td>
-                            <td>Galaxy</td>
+                            <td>Graph</td>
+                            <td>4/4</td>
                             <td>
-                              <span>Japan</span>
+                              <span>Medium</span>
                             </td>
-                            <td>Paid</td>
+                            <td>Completed</td>
                             <td>
                               <span>Last Login</span>
-                              <span class="m-0 pl-3">10 sec ago</span>
+                              <span class="m-0 pl-3">10 days ago</span>
                             </td>
                           </tr>
                           <tr>
-                            <td>Doris R.</td>
-                            <td>Moto Z2</td>
+                            <td>Stacks</td>
+                            <td>2/4</td>
                             <td>
-                              <span>England</span>
+                              <span>Difficult</span>
                             </td>
-                            <td>Paid</td>
+                            <td>Completed</td>
                             <td>
                               <span>Last Login</span>
-                              <span class="m-0 pl-3">10 sec ago</span>
+                              <span class="m-0 pl-3">10 days ago</span>
                             </td>
                           </tr>
                           <tr>
-                            <td>Elizabeth W.</td>
-                            <td>Notebook Asus</td>
+                            <td>Hash</td>
+                            <td>Not Attempted</td>
                             <td>
-                              <span>China</span>
+                              <span>Difficult</span>
                             </td>
-                            <td> Pending</td>
+                            <td>Incompleted</td>
                             <td>
                               <span>Last Login</span>
-                              <span class="m-0 pl-3">10 sec ago</span>
+                              <span class="m-0 pl-3">10 days ago</span>
                             </td>
                           </tr>
                         </tbody>
@@ -271,7 +390,9 @@ function Profile() {
           </div>
         </div>
       </div>
-      <Footer />
+      <div classname="footerrrrrrrrrr" style={{transform: 'translate(0%, -270%)'}}>
+        <Footer />
+      </div>
     </div>
   );
 }

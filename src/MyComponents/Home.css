@@ -974,8 +974,18 @@ a:hover {
   }
 }
 
+.feature .feature-item {
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: 8px 8px 20px 2px rgba(160, 160, 160, 0.42);;
+}
+
 .feature .app-screen {
   margin: 20px 0;
+}
+
+.feature-item {
+  text-align: center;
 }
 
 .feature .app-screen img {
@@ -2295,7 +2305,11 @@ a:hover {
 }
 
 .img-fluid {
-  margin-left: 40px;
+  margin-left: 20px;
+}
+
+.image-block .img-fluid {
+  margin-left: -40px;
 }
 
 .chatbot {
@@ -2304,4 +2318,81 @@ a:hover {
   z-index: 10;
 }
 
-/*# sourceMappingURL=maps/style.css.map */
+.home-text {
+  cursor: default;
+}
+
+.home-text span {
+  position: relative;
+  top: -20px;
+  left: 60px;
+  display: inline-block;
+  -webkit-animation: bounce 1.6s ease infinite alternate;
+  font-size: 160px;
+  color: #fff;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
+    0 5px 0 #ccc, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent,
+    0 9px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.home-text span:nth-child(2) {
+  -webkit-animation-delay: 0.1s;
+}
+
+.home-text span:nth-child(3) {
+  -webkit-animation-delay: 0.2s;
+}
+
+.home-text span:nth-child(4) {
+  -webkit-animation-delay: 0.3s;
+}
+
+.home-text span:nth-child(5) {
+  -webkit-animation-delay: 0.4s;
+}
+
+.home-text span:nth-child(6) {
+  -webkit-animation-delay: 0.5s;
+}
+
+.home-text span:nth-child(7) {
+  -webkit-animation-delay: 0.6s;
+}
+
+.home-text span:nth-child(8) {
+  -webkit-animation-delay: 0.2s;
+}
+
+.home-text span:nth-child(9) {
+  -webkit-animation-delay: 0.3s;
+}
+
+.home-text span:nth-child(10) {
+  -webkit-animation-delay: 0.4s;
+}
+
+.home-text span:nth-child(11) {
+  -webkit-animation-delay: 0.5s;
+}
+
+.home-text span:nth-child(12) {
+  -webkit-animation-delay: 0.6s;
+}
+
+.home-text span:nth-child(13) {
+  -webkit-animation-delay: 0.7s;
+}
+
+.home-text span:nth-child(14) {
+  -webkit-animation-delay: 0.8s;
+}
+
+/* ANIMATION */
+@-webkit-keyframes bounce {
+  100% {
+    top: -10px;
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
+      0 5px 0 #ccc, 0 6px 0 #ccc, 0 7px 0 #ccc, 0 8px 0 #ccc, 0 9px 0 #ccc,
+      0 50px 25px rgba(0, 0, 0, 0.2);
+  }
+}
