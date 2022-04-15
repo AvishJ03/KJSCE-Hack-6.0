@@ -13,7 +13,6 @@ import {
   Checkbox,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import './Contests.css'
 import Header from '../../MyComponents/Header'
 
 const Contests = () => {
