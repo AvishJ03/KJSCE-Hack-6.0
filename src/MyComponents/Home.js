@@ -40,9 +40,9 @@ function Home() {
   return (
     <div>
       <Header />
-      <div className="chatbot">
+{/*       <div className="chatbot">
         <Chatbot />
-      </div>
+      </div> */}
       <div className="wrapper">
         <section className="banner bg-1" id="home">
           <div className="container">

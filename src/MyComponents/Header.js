@@ -5,11 +5,7 @@ import hori_logo from "../images/logo-text.png";
 
 import { useAuth } from "../contexts/AuthContext";
 import {
-  BrowserRouter,
-  Route,
-  NavLink,
-  Link,
-  useNavigate,
+  useNavigate
 } from "react-router-dom";
 
 function Header() {

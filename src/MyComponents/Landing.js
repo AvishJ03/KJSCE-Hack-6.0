@@ -16,20 +16,26 @@ function Home() {
     navigate("/login");
   }
 
-
   return (
     <div>
       <Header2 />
-      <div className='chatbot'>
+{/*       <div className="chatbot">
         <Chatbot />
-      </div>
+      </div> */}
       <div className="wrapper">
         <section className="banner bg-1" id="home">
           <div className="container">
             <div className="row">
               <div className="col-md-8 align-self-center">
                 <div className="content-block">
-                  <h1>VLearn</h1>
+                  <h1 className="home-text">
+                    <span>V</span>
+                    <span>L</span>
+                    <span>e</span>
+                    <span>a</span>
+                    <span>r</span>
+                    <span>n</span>
+                  </h1>
                   <h5>"Discover the new way of learning"</h5>
                 </div>
               </div>
@@ -182,8 +188,13 @@ function Home() {
             <div className="row">
               <div className="col-12">
                 <div className="section-title mb-4">
-                  <h2 className="mb-3">Choose Your Subscription Plan</h2>
-                  <p>
+                  <h2
+                    className="mb-3"
+                    style={{ color: "white", fontWeight: "bold" }}
+                  >
+                    Choose Your Subscription Plan
+                  </h2>
+                  <p style={{ color: "white" }}>
                     Get yourself access to the various services we provide, to
                     build your future with the power of AI.{" "}
                   </p>
@@ -208,13 +219,12 @@ function Home() {
                     <li>No Access to symbl.ai</li>
                   </ul>
                   <div className="action-button">
-                    <a
-                      href="#"
+                    <button
                       className="btn btn-main-rounded"
-                      onClick={handleclicklogin}
+                      style={{ color: "white", fontWeight: "bolder" }}
                     >
-                      Pay Now
-                    </a>
+                      Start Now
+                    </button>
                   </div>
                 </div>
               </div>
@@ -235,13 +245,13 @@ function Home() {
                     <li>Limited Access to symbl.ai</li>
                   </ul>
                   <div className="action-button">
-                    <a
-                      href="#"
+                    <button
                       className="btn btn-main-rounded"
                       onClick={handleclicklogin}
+                      style={{ color: "white", fontWeight: "bolder" }}
                     >
-                      Pay Now
-                    </a>
+                      Pay with MetaMask 
+                    </button>
                   </div>
                 </div>
               </div>
@@ -262,13 +272,13 @@ function Home() {
                     <li>Unlimited Access to symbl.ai</li>
                   </ul>
                   <div className="action-button">
-                    <a
-                      href="#"
+                    <button
                       className="btn btn-main-rounded"
                       onClick={handleclicklogin}
+                      style={{ color: "white", fontWeight: "bolder" }}
                     >
-                      Pay Now
-                    </a>
+                      Pay with MetaMask
+                    </button>
                   </div>
                 </div>
               </div>

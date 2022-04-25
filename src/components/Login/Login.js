@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 import "./Login.css";
-import { db, auth } from "../../utils/init-firebase";
 import { useAuth } from "../../contexts/AuthContext";
 import {
-  BrowserRouter,
-  Route,
-  NavLink,
-  Link,
   useNavigate,
 } from "react-router-dom";
 

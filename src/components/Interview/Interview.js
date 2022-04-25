@@ -4,6 +4,8 @@ import "./Interview.css";
 import Header from "../../MyComponents/Header";
 import Footer from "../../MyComponents/Footer";
 import Cam from "./Cam";
+import interview from "../../images/interview.gif";
+import { useNavigate } from "react-router-dom";
 import {
   ChakraProvider,
   Box,
@@ -15,7 +17,6 @@ import {
   ModalBody,
   ModalCloseButton,
   useDisclosure,
-  FormLabel,
   Button,
   extendTheme,
   Input,
@@ -63,13 +64,13 @@ const Interview = () => {
   const [polarity, setPolarity] = useState("");
   const [suggested, setSuggested] = useState("");
   const [file, setFile] = useState();
-  const getData = ()=>{
+  const getData = () => {
     Axios.get("http://localhost:3001/").then((res) => {
       console.log(res);
       setPolarity(res.data.topics[0].sentiment.polarity.score);
       setSuggested(res.data.topics[0].sentiment.suggested);
     });
-  }
+  };
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -89,6 +90,7 @@ const Interview = () => {
         <Cam />
         <div>
           <ChakraProvider theme={theme}>
+            <h1 className="title-interview">Interview Analysis</h1>
             <Box p={8}>
               <FormControl
                 action="#"
@@ -100,6 +102,7 @@ const Interview = () => {
                   type="file"
                   id="file"
                   accept=".wav"
+                  className="input-file"
                   onChange={(e) => {
                     setFile(e.target.files[0]);
                   }}
@@ -107,26 +110,39 @@ const Interview = () => {
               </FormControl>
               <Button onClick={send}>Upload File</Button>
               <Button
-                onClick={()=>{
-                  onOpen()
-                  getData()
-                  }}
+                onClick={() => {
+                  onOpen();
+                  getData();
+                }}
                 m={4}
-                // className="anal-btn"
               >{`Analysis`}</Button>
+              <p className="para">
+                Interviews are crucial moments in one's career. Theoretical
+                knowledge of interview questions isn't enough when you actually
+                face an interview. As the adage goes, practice makes perfect!
+                Mock interviews by VLearn give you the platform to
+                prepare, practice and experience firsthand how a real-life job
+                interview feels. Familiarizing yourself with the interview
+                environment beforehand in a relaxed and stress-free environment
+                gives you an edge over your peers. Too often fear takes over our
+                performance in job interviews. You can get Sentiment Analysis in
+                real-time and asynchronously (i.e., after the call has ended)
+                for your Interview. We use Symbl AI to provide you this service.
+              </p>
+              <img src={interview} className="interview-img" alt="" />
             </Box>
           </ChakraProvider>
         </div>
         <Modal onClose={onClose} size="sm" isOpen={isOpen}>
           <ModalOverlay />
           <ModalContent>
-            <ModalHeader>The mood of the interviee</ModalHeader>
+            <ModalHeader>Analysis of the Interview</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
               <div>
-                {`The mood of the interviee is ${suggested}`}
+                {`The mood of the interviewer is positive${suggested}`}
                 <br />
-                {`The polarity of that mood is ${polarity}`}
+                {`The polarity of that student's mood is confident${polarity}`}
               </div>
             </ModalBody>
             <ModalFooter>

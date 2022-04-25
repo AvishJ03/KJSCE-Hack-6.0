@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   HStack,
   VStack,
@@ -10,16 +10,9 @@ import {
   ModalBody,
   ModalCloseButton,
   useDisclosure,
-  RadioGroup,
-  Stack,
-  Radio,
   Button,
   Input,
   Tag,
-  TagLabel,
-  TagLeftIcon,
-  TagRightIcon,
-  TagCloseButton,
 } from "@chakra-ui/react";
 const Chatbot = () => {
   const value = {

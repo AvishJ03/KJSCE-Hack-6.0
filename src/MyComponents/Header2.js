@@ -3,11 +3,7 @@ import "./Header.css";
 import avatar from "../images/pfp.png";
 import hori_logo from "../images/logo-text.png";
 import {
-  BrowserRouter,
-  Route,
-  NavLink,
-  Link,
-  useNavigate,
+  useNavigate
 } from "react-router-dom";
 
 function Header() {

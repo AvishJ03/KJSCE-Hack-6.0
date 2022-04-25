@@ -3,9 +3,9 @@ import Footer from "../../MyComponents/Footer";
 import { useNavigate } from "react-router-dom";
 import "./Quiz.css";
 import { useAuth } from "../../contexts/AuthContext";
-import { db, auth } from "../../utils/init-firebase";
+import { db } from "../../utils/init-firebase";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   collection,
   doc,

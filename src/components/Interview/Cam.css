@@ -1,6 +1,6 @@
 .video-rec {
     width: 100vw;
-    height: 81vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,10 +24,13 @@
 
   .video-rec button {
     position: absolute;
-    top: 14%;
+    top: 6%;
 }
 
-.down-btn {
+.cam-btns {
     position: relative;
-    top: 74% !important;
+    border: 2px solid white;
+}
+.down-btn {
+    top: 36% !important;
 }
