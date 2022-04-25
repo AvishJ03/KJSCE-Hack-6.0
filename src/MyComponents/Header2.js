@@ -1,6 +1,5 @@
 import React from "react";
 import "./Header.css";
-import avatar from "../images/pfp.png";
 import hori_logo from "../images/logo-text.png";
 import {
   useNavigate
@@ -15,10 +14,6 @@ function Header() {
   function handleclickquizlets(e) {
     e.preventDefault();
     navigate("/quizlets");
-  }
-  function handleclickprofile(e) {
-    e.preventDefault();
-    navigate("/profile");
   }
   function handleclickcontests(e) {
     e.preventDefault();

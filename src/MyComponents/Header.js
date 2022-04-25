@@ -2,7 +2,6 @@ import React from "react";
 import "./Header.css";
 import avatar from "../images/pfp.png";
 import hori_logo from "../images/logo-text.png";
-
 import { useAuth } from "../contexts/AuthContext";
 import {
   useNavigate
